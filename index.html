@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Smart College | Zaytuna Park</title>
+  <meta name="description" content="The Smart College at Zaytuna Park offers focused holiday classes and supportive learning in General Science, General Arts, Visual Arts, Home Economics, and Business.">
+  
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-blue: #2563eb;
+      --primary-dark: #111827;
+      --secondary-dark: #1f2937;
+      --light-bg: #f8fafc;
+      --accent-blue: #93c5fd;
+      --border-color: #e5e7eb;
+    }
+
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+
+    body { 
+      font-family: 'Manrope', sans-serif; 
+      background: var(--light-bg); 
+      color: var(--primary-dark); 
+      overflow-x: hidden; 
+      line-height: 1.6;
+    }
+
+    html { 
+      scroll-behavior: smooth; 
+    }
+
+    img { 
+      width: 100%; 
+      height: auto;
+      display: block; 
+    }
+
+    a { 
+      text-decoration: none; 
+      transition: all 0.3s ease;
+    }
+
+    /* ================= HEADER & NAV ================= */
+    .site-header { 
+      background: #fff; 
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .site-header .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark { 
+      width: 50px; 
+      height: 50px; 
+      border-radius: 50%; 
+      background: var(--primary-blue); 
+      color: #fff; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-weight: 800; 
+      font-size: 1.1rem;
+    }
+
+    .brand strong { 
+      display: block; 
+      color: var(--primary-dark); 
+      font-size: 1.1rem; 
+      line-height: 1.2;
+    }
+
+    .brand small { 
+      color: #6b7280; 
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-link { 
+      color: var(--primary-dark) !important; 
+      font-weight: 600; 
+      font-size: 0.95rem;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+
+    .site-header .nav-link:hover { 
+      color: var(--primary-blue) !important; 
+      background: rgba(37, 99, 235, 0.05);
+    }
+
+    /* ================= HERO SECTION ================= */
+    .hero { 
+      position: relative; 
+      min-height: 100vh; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      text-align: center; 
+      overflow: hidden; 
+      padding: 120px 20px;
+    }
+
+    .hero-media { 
+      position: absolute; 
+      inset: 0; 
+      z-index: 1;
+    }
+
+    .hero-media img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+    }
+
+    .hero-overlay { 
+      position: absolute; 
+      inset: 0; 
+      background: rgba(0, 0, 0, 0.65); 
+      z-index: 2;
+    }
+
+    .hero-content { 
+      position: relative; 
+      z-index: 3; 
+      color: #fff; 
+      max-width: 850px; 
+    }
+
+    .eyebrow { 
+      color: var(--accent-blue); 
+      font-weight: 700; 
+      letter-spacing: 1.5px; 
+      text-transform: uppercase; 
+      margin-bottom: 20px; 
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+
+    .hero h1 { 
+      font-size: 4rem; 
+      margin-bottom: 20px; 
+      font-family: 'Playfair Display', serif; 
+      font-weight: 700;
+    }
+
+    .hero-copy { 
+      font-size: 1.25rem; 
+      margin-bottom: 35px; 
+      line-height: 1.8; 
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* ================= BUTTONS ================= */
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .button { 
+      padding: 14px 32px; 
+      border-radius: 50px; 
+      font-weight: 700; 
+      display: inline-block;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .button.primary { 
+      background: var(--primary-blue); 
+      color: #fff; 
+    }
+
+    .button.primary:hover { 
+      background: #1d4ed8; 
+      color: #fff; 
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    }
+
+    .button.secondary { 
+      border: 2px solid #fff; 
+      color: #fff; 
+    }
+
+    .button.secondary:hover { 
+      background: #fff; 
+      color: var(--primary-dark); 
+      transform: translateY(-3px);
+    }
+
+    /* ================= GENERAL SECTIONS ================= */
+    .section { 
+      padding: 100px 0; 
+    }
+
+    .section-heading { 
+      margin-bottom: 60px; 
+    }
+
+    .section-heading h2 { 
+      font-size: 2.5rem; 
+      font-weight: 800; 
+      color: var(--primary-dark);
+      margin-top: 10px;
+      line-height: 1.3;
+    }
+
+    .section-heading.center {
+      text-align: center;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--primary-blue);
+    }
+
+    /* ================= ABOUT SECTION ================= */
+    .intro-section {
+      background: #fff;
+    }
+
+    .about-card {
+      background: var(--light-bg);
+      padding: 40px 30px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .about-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+      border-color: var(--accent-blue);
+    }
+
+    .stat { 
+      font-size: 3rem; 
+      font-weight: 800; 
+      color: var(--primary-blue); 
+      display: block; 
+      margin-bottom: 15px; 
+      line-height: 1;
+    }
+
+    .about-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--primary-dark);
+    }
+
+    .about-card p {
+      color: #4b5563;
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    /* ================= PROGRAMS SECTION ================= */
+    .programs-section {
+      background: var(--light-bg);
+    }
+
+    .program-copy h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .program-copy p {
+      font-size: 1.1rem;
+      color: #4b5563;
+      margin-bottom: 40px;
+      max-width: 650px;
+    }
+
+    .program-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .program-list span { 
+      background: #fff; 
+      color: var(--primary-blue); 
+      padding: 14px 28px; 
+      border-radius: 50px; 
+      font-weight: 700; 
+      display: inline-block; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid var(--border-color);
+      font-size: 1rem;
+    }
+
+    /* ================= FEATURE SECTION ================= */
+    .feature-section {
+      background: #fff;
+    }
+
+    .feature-image img { 
+      border-radius: 24px; 
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      max-width: 100%;
+    }
+
+    .feature-copy h2 { 
+      font-size: 2.75rem; 
+      font-weight: 800; 
+      margin: 20px 0; 
+      line-height: 1.25;
+    }
+
+    .feature-copy p {
+      font-size: 1.1rem;
+      color: #4b5563;
+      margin-bottom: 30px;
+    }
+
+    /* ================= GALLERY SECTION ================= */
+    .gallery-section {
+      background: var(--light-bg);
+    }
+
+    .gallery-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    }
+
+    .gallery-card img { 
+      height: 240px; 
+      object-fit: cover; 
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+
+    .gallery-card img:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-card figcaption {
+      padding: 16px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border-color);
+      background: #fff;
+      margin-top: auto;
+    }
+
+    /* ================= LIGHTBOX MODAL ================= */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      padding: 40px 20px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(17, 24, 39, 0.95);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      width: auto;
+      max-width: 90%;
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+      animation: zoomIn 0.3s ease;
+    }
+
+    .lightbox-caption {
+      margin: 20px auto 0 auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      color: #fff;
+      font-size: 45px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 2001;
+    }
+
+    .lightbox-close:hover {
+      color: var(--accent-blue);
+    }
+
+    @keyframes zoomIn {
+      from {transform: scale(0.95); opacity: 0;}
+      to {transform: scale(1); opacity: 1;}
+    }
+
+    /* ================= CONTACT SECTION ================= */
+    .contact-section {
+      background: #fff;
+    }
+
+    .contact-section h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .contact-section p {
+      font-size: 1.1rem;
+      color: #4b5563;
+      max-width: 550px;
+    }
+
+    .contact-card { 
+      background: linear-gradient(135deg, var(--primary-blue), #1d4ed8); 
+      color: #fff; 
+      padding: 40px; 
+      border-radius: 24px; 
+      box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
+    }
+
+    .contact-card .label { 
+      color: rgba(255, 255, 255, 0.75); 
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .contact-card strong {
+      display: block;
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    .contact-card .button.primary {
+      background: #fff;
+      color: var(--primary-blue);
+      border: none;
+      width: 100%;
+    }
+
+    .contact-card .button.primary:hover {
+      background: var(--light-bg);
+      color: #1d4ed8;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ================= FOOTER ================= */
+    .site-footer { 
+      background: var(--primary-dark); 
+      color: rgba(255, 255, 255, 0.6); 
+      text-align: center; 
+      padding: 40px 20px; 
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .site-footer p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    /* ================= RESPONSIVE DESIGN ================= */
+    @media (max-width: 991px) {
+      .hero h1 { 
+        font-size: 3rem; 
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 70px 0;
+      }
+      .hero { 
+        min-height: auto; 
+        padding: 120px 20px;
+      }
+      .hero h1 { 
+        font-size: 2.5rem; 
+      }
+      .hero-copy {
+        font-size: 1.1rem;
+      }
+      .section-heading h2, .program-copy h2, .feature-copy h2, .contact-section h2 { 
+        font-size: 2rem; 
+      }
+      .gallery-card img {
+        height: 280px;
+      }
+      .lightbox-content {
+        max-width: 95%;
+        max-height: 65vh;
+      }
+      .lightbox-close {
+        top: 20px;
+        right: 20px;
+        font-size: 35px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 { 
+        font-size: 2.1rem; 
+      }
+      .button { 
+        width: 100%; 
+      }
+      .contact-card {
+        padding: 30px 20px;
+      }
+      .contact-card strong {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-light container py-2">
+      <a class="brand navbar-brand" href="#home" aria-label="The Smart College home">
+        <span class="brand-mark">SC</span>
+        <span>
+          <strong>The Smart College</strong>
+          <small>Zaytuna Park</small>
+        </span>
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="navbar-nav gap-2 mt-3 mt-lg-0">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#programs">Programs</a>
+          <a class="nav-link" href="#gallery">Gallery</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <img src="photo_2026-05-20_14-55-07.jpg" alt="">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <p class="eyebrow">Holiday Classes • Double Track 1 &amp; 2</p>
+        <h1>The Smart College</h1>
+        <p class="hero-copy">A focused, friendly learning community at Zaytuna Park, helping students build confidence, discipline, and strong academic foundations.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#programs">Explore Programs</a>
+          <a class="button secondary" href="#gallery">View Campus Moments</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section intro-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12">
+            <div class="section-heading mb-0">
+              <p class="eyebrow">Learning with care</p>
+              <h2>A college built for focus, encouragement, and progress.</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <article class="about-card">
+              <span class="stat">5</span>
+              <h3>Study Programs</h3>
+              <p>Core subject paths for students preparing strongly during the holiday season.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-4">
+            <article class="about-card">
+              <span class="stat">1 &amp; 2</span>
+              <h3>Double Track Support</h3>
+              <p>Classes arranged to support both tracks with clear routines and steady guidance.</p>
+            </article>
+          </div>
+          <div class="col-12 col-md-4">
+            <article class="about-card">
+              <span class="stat">100%</span>
+              <h3>Student Focused</h3>
+              <p>A calm study atmosphere where learners can ask questions, revise, and grow.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS SECTION -->
+    <section id="programs" class="section programs-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+            <div class="program-copy">
+              <p class="eyebrow">Programs</p>
+              <h2>Holiday classes for ambitious students.</h2>
+              <p>The Smart College welcomes learners into practical, structured classes designed to strengthen understanding and prepare them for the next academic challenge.</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="program-list" aria-label="Programs offered">
+              <span>General Science</span>
+              <span>General Arts</span>
+              <span>Visual Arts</span>
+              <span>Home Economics</span>
+              <span>Business</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE SECTION -->
+    <section class="section feature-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+            <div class="feature-image">
+              <img src="photo_2026-05-20_15-04-23.jpg" alt="The Smart College holiday classes flyer">
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 ps-lg-5">
+            <div class="feature-copy">
+              <p class="eyebrow">Now enrolling</p>
+              <h2>Holiday classes at Zaytuna Park.</h2>
+              <p>Students in Double Track 1 and 2 can join supportive classes in the main academic programs. The school is located at Zaytuna Park, with WhatsApp contact shown on the official flyer.</p>
+              <a class="button primary" href="#contact">Find Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="section gallery-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12">
+            <div class="section-heading center mb-0">
+              <p class="eyebrow">Gallery</p>
+              <h2>Moments from The Smart College.</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-6">
+            <div class="gallery-card">
+              <img src="photo_2026-05-20_14-55-07.jpg" alt="Students and staff standing together outside The Smart College">
+              <figcaption>Students and staff together</figcaption>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="gallery-card">
+              <img src="photo_2026-05-20_14-51-29.jpg" alt="Students studying around a table">
+              <figcaption>Focused group study</figcaption>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="gallery-card">
+              <img src="photo_2026-05-20_14-53-28.jpg" alt="Students learning in class">
+              <figcaption>Classroom learning</figcaption>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="gallery-card">
+              <img src="photo_2026-05-20_14-54-00.jpg" alt="Student reading in a quiet study space">
+              <figcaption>Quiet reading time</figcaption>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="gallery-card">
+              <img src="photo_2026-05-20_14-54-24.jpg" alt="Student studying with books and notes">
+              <figcaption>Personal revision</figcaption>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="gallery-card">
+              <img src="photo_2026-05-20_14-54-46.jpg" alt="Public relation officer campaign flyer">
+              <figcaption>Student leadership</figcaption>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="gallery-card">
+              <img src="photo_2026-05-20_14-57-48.jpg" alt="Public relation officer campaign design">
+              <figcaption>Campus representation</figcaption>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-6">
+            <div class="gallery-card">
+              <img src="photo_2026-05-20_15-04-23.jpg" alt="The Smart College holiday classes announcement">
+              <figcaption>Holiday classes flyer</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+            <p class="eyebrow">Visit us</p>
+            <h2>The Smart College is located at Zaytuna Park.</h2>
+            <p>Come for committed teaching, a welcoming learning environment, and classes that help students use their holiday period wisely.</p>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="contact-card">
+              <p class="label">Location</p>
+              <strong>Zaytuna Park</strong>
+              <p class="label">WhatsApp / Contact</p>
+              <strong>0244 143301</strong>
+              <a class="button primary full" href="https://wa.me/233244143301">Message on WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL CONTAINER -->
+  <div id="lightboxModal" class="lightbox-modal">
+    <span class="lightbox-close" aria-label="Close Fullscreen Image">&times;</span>
+    <img class="lightbox-content" id="lightboxImg" alt="Full screen preview">
+    <div id="lightboxCaption" class="lightbox-caption"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 The Smart College. Zaytuna Park. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- BOOTSTRAP BUNDLE JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- LIGHTBOX JAVASCRIPT LOGIC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('lightboxModal');
+      const modalImg = document.getElementById('lightboxImg');
+      const captionText = document.getElementById('lightboxCaption');
+      const closeBtn = document.querySelector('.lightbox-close');
+
+      // Add click events to all gallery card images
+      document.querySelectorAll('.gallery-card img').forEach(img => {
+        img.addEventListener('click', function() {
+          modal.style.display = 'flex';
+          modalImg.src = this.src;
+          
+          // Get caption from the sibling <figcaption> elements
+          const figcaption = this.nextElementSibling;
+          if (figcaption) {
+            captionText.textContent = figcaption.textContent;
+          } else {
+            captionText.textContent = "";
+          }
+        });
+      });
+
+      // Close events
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal || e.target === closeBtn) {
+          modal.style.display = 'none';
+        }
+      });
+
+      // Accessibility support: Close on Escape keypress
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
